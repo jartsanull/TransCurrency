@@ -12,15 +12,17 @@ public class Currency {
 	    @GeneratedValue(strategy = GenerationType.AUTO)
 	    private Long id;
 
-	    private double currency;
-	   // private String currencyTxt;
+	    private String currency;
+	    private double value;
+	   // private String valueTxt;
 
 	    public Currency() {
 	    }
 
-	    public Currency(double currency/*, String currencyTxt*/) {
-	        this.currency = currency;
-	        //this.currencyTxt = currencyTxt;
+	    public Currency(String currency, double value/*, String valueTxt*/) {
+	    	this.currency = currency;
+	    	this.value = value;
+	        //this.valueTxt = valueTxt;
 	    }
 
 	    public Long getId() {
@@ -30,29 +32,39 @@ public class Currency {
 	    public void setId(Long id) {
 	        this.id = id;
 	    }
-
-	    public double getCurrency() {
+	    
+	    public String getCurrency() {
 	        return currency;
 	    }
 
-	    public void setCurrency(double currency) {
+	    public void setCurrency(String currency) {
 	        this.currency = currency;
 	    }
+
+	    public double getValue() {
+	        return value;
+	    }
+
+	    public void setValue(double value) {
+	        this.value = value;
+	    }
+
+
 	    
-	    /*   public String getCurrencyTxt() {
-        return currencyTxt;
+	    /*   public String getValueTxt() {
+        return valueTxt;
     }
 
-    public void setCurrencyTxt(String currencyTxt) {
-        this.currencyTxt = currencyTxt;
+    public void setValueTxt(String valueTxt) {
+        this.valueTxt = valueTxt;
     }*/
 
 
+		
 		@Override
 		public String toString() {
-			return "Currency [id=" + id + ", currency=" + currency + "]"; //", currencyTxt=" + currencyTxt + "]";
+			return "Currency [id=" + id + ", currency=" + currency + ", value=" + value + "]"; //", valueTxt=" + valueTxt + "]";
 		}
-
 
     
 

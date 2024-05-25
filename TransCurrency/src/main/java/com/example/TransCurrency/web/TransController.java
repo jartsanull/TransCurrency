@@ -13,4 +13,9 @@ public class TransController {
 	public String main(Model model) {
 		return "main";
 	  }
+	
+	@RequestMapping("/convert")
+	public String convert(Model model) {
+		return "redirect:/main";
+	  }
 }

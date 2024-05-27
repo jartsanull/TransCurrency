@@ -9,13 +9,18 @@ import org.springframework.web.bind.annotation.ResponseBody;
 //@ResponseBody
 public class TransController {
 
-	@RequestMapping("/main")
+	@RequestMapping("/main")                  //main page
 	public String main(Model model) {
 		return "main";
 	  }
 	
-	@RequestMapping("/convert")
+	@RequestMapping("/convert")                //converter
 	public String convert(Model model) {
 		return "redirect:/main";
+	  }
+	
+	@RequestMapping("/value")                  //displays values of currencies in real time
+	public String value(Model model) {
+		return "value";
 	  }
 }

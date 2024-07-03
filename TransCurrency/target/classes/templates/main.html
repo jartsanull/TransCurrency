@@ -29,12 +29,19 @@
    
    .select-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
     gap: 10px;
     /*padding-left: 475px;*/
     padding-top: 50px;
     
+    }
+    
+    .select-group {
+    
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 </style>
 <body>
@@ -47,23 +54,28 @@
      	
     <div class="select-container">
     <input type="text" name="content" placeholder="Insert the amount...">
-    <h2>From:</h2>
-    <select name="currencies1" id="currencies1">
-    <option>--</option>
-    <option value="euro">Euro</option>
-  	<option value="usd">US Dollar (USD)</option>
-  	<option value="nk">Norwegian Krone (NK)</option>
-  	<option value="gbp">British Pound (GBP)</option>
+    
+    <div class="select-group">
+	    <h2>From:</h2>
+	    <select name="currencies1" id="currencies1">
+	    <option>--</option>
+	    <option value="euro">Euro</option>
+	  	<option value="usd">US Dollar (USD)</option>
+	  	<option value="nk">Norwegian Krone (NK)</option>
+	  	<option value="gbp">British Pound (GBP)</option>
 	</select>
+	</div>
 	
-	<h3>To:</h3>
-	<select name="currencies2" id="currencies2">
-    <option>--</option>
-    <option value="euro">Euro</option>
-  	<option value="usd">US Dollar (USD)</option>
-  	<option value="nk">Norwegian Krone (NK)</option>
-  	<option value="gbp">British Pound (GBP)</option>
+	<div class="select-group">
+		<h3>To:</h3>
+		<select name="currencies2" id="currencies2">
+	    <option>--</option>
+	    <option value="euro">Euro</option>
+	  	<option value="usd">US Dollar (USD)</option>
+	  	<option value="nk">Norwegian Krone (NK)</option>
+	  	<option value="gbp">British Pound (GBP)</option>
 	</select>
+	</div>
 	</div>
    
 </body>

@@ -2,6 +2,7 @@ package com.example.TransCurrency.domain;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GeneratedcurrencyValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
@@ -13,16 +14,16 @@ public class Currency {
 	    private Long id;
 
 	    private String currency;
-	    private double value;
-	   // private String valueTxt;
+	    private double currencyValue;
+	   // private String currencyValueTxt;
 
 	    public Currency() {
 	    }
 
-	    public Currency(String currency, double value/*, String valueTxt*/) {
+	    public Currency(String currency, double currencyValue/*, String currencyValueTxt*/) {
 	    	this.currency = currency;
-	    	this.value = value;
-	        //this.valueTxt = valueTxt;
+	    	this.currencyValue = currencyValue;
+	        //this.currencyValueTxt = currencyValueTxt;
 	    }
 
 	    public Long getId() {
@@ -41,29 +42,29 @@ public class Currency {
 	        this.currency = currency;
 	    }
 
-	    public double getValue() {
-	        return value;
+	    public double getcurrencyValue() {
+	        return currencyValue;
 	    }
 
-	    public void setValue(double value) {
-	        this.value = value;
+	    public void setcurrencyValue(double currencyValue) {
+	        this.currencyValue = currencyValue;
 	    }
 
 
 	    
-	    /*   public String getValueTxt() {
-        return valueTxt;
+	    /*   public String getcurrencyValueTxt() {
+        return currencyValueTxt;
     }
 
-    public void setValueTxt(String valueTxt) {
-        this.valueTxt = valueTxt;
+    public void setcurrencyValueTxt(String currencyValueTxt) {
+        this.currencyValueTxt = currencyValueTxt;
     }*/
 
 
 		
 		@Override
 		public String toString() {
-			return "Currency [id=" + id + ", currency=" + currency + ", value=" + value + "]"; //", valueTxt=" + valueTxt + "]";
+			return "Currency [id=" + id + ", currency=" + currency + ", currencyValue=" + currencyValue + "]"; //", currencyValueTxt=" + currencyValueTxt + "]";
 		}
 
     

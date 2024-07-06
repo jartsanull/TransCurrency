@@ -23,4 +23,9 @@ public class TransController {
 	public String value(Model model) {
 		return "value";
 	  }
+	
+	@RequestMapping("/old-currencies")          //displays values of currencies in real time
+	public String oldCurrencies(Model model) {
+		return "oldvs";
+	  }
 }

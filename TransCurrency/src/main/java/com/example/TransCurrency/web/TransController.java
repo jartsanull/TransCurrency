@@ -29,6 +29,6 @@ public class TransController {
 	
 	@RequestMapping("/old-currencies")          //displays values of old currencies based on final value during last usage
 	public String oldCurrencies(Model model) {
-		return "oldvs";
+		return "old-currencies.html";
 	  }
 }

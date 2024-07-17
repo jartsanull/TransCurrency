@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" /> 
+    <title>TransCurrency</title>
+</head>
+
+<style>
+
+     body {
+              background-image: url('moni.png');
+     }
+
+     h1 {
+             color: black; /* temporary*/
+             text-align: center;
+             font-size: 50px;
+     }
+
+      h2, h3 {
+             color: black; /* temporary*/
+             text-align: center;
+             font-size: 25px;
+             margin: 0;
+
+     }
+
+   /* below is the way to make headers appear above the select list */
+   .select-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-top: 45px;
+
+    }
+
+    .select-group {
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* <- this makes headers be at left side of list */
+    }
+
+    .field {
+        margin-top: 27px; 
+    }
+
+</style>
+<body>
+
+        <br>
+   <h1>Welcome to TransCurrency</h1>
+
+
+    <br> <br> <br> <br> <br>
+    <div class="select-container">
+    <input type="text" name="content" placeholder="Insert the amount..." class="field">
+
+    <div class="select-group">
+            <h2>From:</h2>
+            <select name="currencies1" id="currencies1">
+            <option>--</option>
+            <option value="euro">Euro</option>
+                  <option value="usd">US Dollar (USD)</option>
+                  <option value="nk">Norwegian Krone (NK)</option>
+                  <option value="gbp">British Pound (GBP)</option>
+                  <option value="chf">Swiss Franc"</option>
+        </select>
+        </div>
+
+        <div class="select-group">
+                <h3>To:</h3>
+                <select name="currencies2" id="currencies2">
+            <option>--</option>
+            <option value="euro">Euro</option>
+                  <option value="usd">US Dollar (USD)</option>
+                  <option value="nk">Norwegian Krone (NK)</option>
+                  <option value="gbp">British Pound (GBP)</option>
+                  <option value="chf">Swiss Franc"</option>
+        </select>
+        </div>
+        </div>
+
+           <br><br>
+           <form action="/convert" method="post" style="text-align: center">
+        <button type="submit" class="btn btn-sm btn-info">Convert</button> <!-- temporary -->
+    </form>
+
+    <br><br>
+    <script>
+    document.getElementById('submit').addEventListener('click', function() {
+        //var list = document.getElementById('palveluLista'); do something like that but make converted currency appear
+      //  list.style.display = (list.style.display === 'none' || list.style.display === '') ? 'block' : 'none';
+    });
+</script>
+
+</body>
+</html>

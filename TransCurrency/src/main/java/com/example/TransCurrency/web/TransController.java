@@ -22,7 +22,7 @@ public class TransController {
 		return "redirect:/main";
 	  }
 	
-	@RequestMapping("/value")                  //displays values of currencies in real time
+	@RequestMapping("/value-displayer")                  //displays values of currencies in real time
 	public String value(Model model) {
 		return "value";
 	  }

@@ -86,10 +86,11 @@
    		
    	<br><br>
    	<form action="/convert" method="post" style="text-align: center">
-        <button type="submit" class="btn btn-sm btn-info">Convert</button> <!-- temporary -->
+        <button type="submit" class="btn btn-sm btn-info" id="convert">Convert</button> <!-- temporary -->
     </form>
     
     <br><br>
+    <div id="result"></div>
     <script>
     document.getElementById('submit').addEventListener('click', function() {
         //var list = document.getElementById('palveluLista'); do something like that but make converted currency appear

@@ -97,6 +97,10 @@
         var currency1 = document.getElementById('currency1').value;
         var currency2 = document.getElementById('currency2').value;
         var result = document.getElementById('result');
+        
+        if (currency1 === '--' || currency2 === '--' || amount === '') { 
+            resultDiv.innerHTML = 'Please fill in all fields.'; 
+        }
     });
 </script>
    		

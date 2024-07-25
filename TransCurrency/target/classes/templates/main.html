@@ -101,6 +101,8 @@
         if (currency1 === '--' || currency2 === '--' || amount === '') { 
             resultDiv.innerHTML = 'Please fill in all fields.'; 
         }
+        
+        resultDiv.innerHTML = amount + ' ' + fromCurrency.toUpperCase() + ' = ' + convertedAmount + ' ' + currency2.toUpperCase();
     });
 </script>
    		

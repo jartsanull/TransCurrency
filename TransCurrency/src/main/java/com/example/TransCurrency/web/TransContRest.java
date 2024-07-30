@@ -36,10 +36,10 @@ public class TransContRest {
 	@PostMapping("/convert")
 	public double convert(@RequestBody ConversionRequest request) {
 		 Currency fromi = currencyRepo.findByCurrency(request.getFrom());
-		 Currency to = currencyRepo.findByCurrency(request.getTo());
+		 Currency toCur = currencyRepo.findByCurrency(request.getTo());
 		 
-		 if(fromi != null && to != null) {
-			 double conversionRate = to.getcurrencyValue() / fromi.getcurrencyValue();
+		 if(fromi != null && toCur != null) {
+			 double conversionRate = toCur.getcurrencyValue() / fromi.getcurrencyValue();
 			 return request.getAmount() * conversionRate;
 		 }
 		 else {
@@ -48,8 +48,27 @@ public class TransContRest {
 	
 	}
 	
+	@PostMapping("/updateRates")
+	public void updateRates() {
+		Map<String, Double> latestRates = currencyService.getLatestRates();
+		latestRates.forEach((currency, rate) -> {
+			Currency existingCurrency = currencyRepo.findByCurrency(currency);
+			if (existingCurrency != null) {
+				existingCurrency.setcurrencyValue(rate);
+				currencyRepo.save(existingCurrency);
+			}
+			else {
+				currencyRepo.save(new Currency(currency,rate));
+			}
+		});
+	}
 	
 	}
+
+class ConversionRequest{
+	private String from, to;
+	
+}
 	
 	
 

@@ -19,4 +19,11 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class TransContRest {
 	
+	@Autowired
+	private CurrencyRepo currencyRepo;
+	
+	@Autowired
+	private CurrencyService currencyService;
+	
+	
 }

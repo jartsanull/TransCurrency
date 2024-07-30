@@ -13,7 +13,9 @@ import com.example.TransCurrency.domain.Currency;
 import com.example.TransCurrency.domain.CurrencyRepo;
 import com.example.TransCurrency.service.CurrencyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 @RequestMapping("/api")
@@ -36,10 +38,18 @@ public class TransContRest {
 		 Currency fromi = currencyRepo.findByCurrency(request.getFrom());
 		 Currency to = currencyRepo.findByCurrency(request.getTo());
 		 
-		 
+		 if(fromi != null && to != null) {
+			 double conversionRate = to.getcurrencyValue() / fromi.getcurrencyValue();
+			 return request.getAmount() * conversionRate;
+		 }
+		 else {
+			 throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Invalid currency");
+		 }
 	
 	}
+	
+	
 	}
 	
 	
-}
+

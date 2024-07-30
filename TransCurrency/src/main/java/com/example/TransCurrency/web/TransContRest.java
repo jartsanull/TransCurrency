@@ -31,6 +31,15 @@ public class TransContRest {
 		return (List<Currency>) currencyRepo.findAll();
 	}
 	
+	@PostMapping("/convert")
+	public double convert(@RequestBody ConversionRequest request) {
+		 Currency fromi = currencyRepo.findByCurrency(request.getFrom());
+		 Currency to = currencyRepo.findByCurrency(request.getTo());
+		 
+		 
+	
+	}
+	}
 	
 	
 }

@@ -26,4 +26,11 @@ public class TransContRest {
 	private CurrencyService currencyService;
 	
 	
+	@GetMapping("/currencies")
+	public List<Currency> getCurrencies(){
+		return (List<Currency>) currencyRepo.findAll();
+	}
+	
+	
+	
 }

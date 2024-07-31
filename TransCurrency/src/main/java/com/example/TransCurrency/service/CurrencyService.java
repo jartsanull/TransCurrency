@@ -13,5 +13,5 @@ public class CurrencyService {
 	private String apiUrl;
 
 	@Value("${exchange.api.key}")
-	private String apiUrl;
+	private String apiKey;
 }

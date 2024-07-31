@@ -12,4 +12,6 @@ public class CurrencyService {
 	@Value("${exchange.api.url}")
 	private String apiUrl;
 
+	@Value("${exchange.api.key}")
+	private String apiUrl;
 }

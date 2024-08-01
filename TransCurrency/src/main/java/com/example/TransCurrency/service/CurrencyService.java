@@ -1,5 +1,6 @@
 package com.example.TransCurrency.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -15,7 +16,6 @@ public class CurrencyService {
 	@Value("${exchange.api.key}")
 	private String apiKey;
 	
-	@Autowired
     private final RestTemplate restTemplate;
 
 }

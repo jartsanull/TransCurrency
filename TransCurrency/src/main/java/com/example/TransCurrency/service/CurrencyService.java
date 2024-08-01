@@ -15,6 +15,7 @@ public class CurrencyService {
 	@Value("${exchange.api.key}")
 	private String apiKey;
 	
+	@Autowired
     private final RestTemplate restTemplate;
 
 }

@@ -19,5 +19,12 @@ public class CurrencyService {
 	private String apiKey;
 	
     private final RestTemplate restTemplate;
+    
+
+    @Autowired
+    public CurrencyService(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
 
 }
